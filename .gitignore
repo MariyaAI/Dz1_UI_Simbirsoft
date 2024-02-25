@@ -1,0 +1,17 @@
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+.idea/
+.vscode/
+.pytest_cache/
+**/__pycache__/
+.pytest_cache/
+.cache/
+.venv/
+env/
+venv/
+.allure/
+allure-report/
+allure-results/
+script*.py
