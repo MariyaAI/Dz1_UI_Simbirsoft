@@ -2,6 +2,7 @@ import pytest
 from selenium import webdriver
 from pageobjects.provider import PobjectProvider
 from selenium.webdriver.chrome.service import Service
+from api.client import ApiClient
 
 
 @pytest.fixture
@@ -18,3 +19,11 @@ def driver():
 @pytest.fixture
 def provider(driver):
     return PobjectProvider(driver)
+
+
+@pytest.fixture
+def api_client():
+    client = ApiClient()
+    client.clear_all_entities()
+    client.create_test_entities()
+    return client
