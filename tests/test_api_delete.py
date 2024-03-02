@@ -1,4 +1,5 @@
 from random import randint
+import pytest
 import allure
 from allure import step
 from api.client import ApiClient
@@ -6,6 +7,7 @@ from api.client import ApiClient
 
 @allure.suite("API тест 'Удаление сущности'")
 @allure.title("API тест 'Удаление сущности'")
+@pytest.mark.api
 def test_api_delete(api_client: ApiClient):
     with step("1) Создаем тестовую сущность"):
         entity_before_dict = {
