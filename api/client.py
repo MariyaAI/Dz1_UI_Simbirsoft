@@ -54,9 +54,14 @@ class ApiClient:
         for e in self.get_all():
             self.delete(e.id)
 
-    def create_test_entities(self):
+    def create_filler_entities(self):
         self.create()
         self.create()
 
-    def get_entity_request_model(self, json_str) -> EntityRequestModel:
-        return EntityRequestModel.model_validate(json_str)
+    def create_test_entity(self, entity_before: EntityRequestModel):
+        with step("Создаем тестовую сущность"):
+            created_id = self.create(entity_request=entity_before)
+        return created_id
+
+    def get_entity_request_model(self, json_dict) -> EntityRequestModel:
+        return EntityRequestModel.model_validate(json_dict)
