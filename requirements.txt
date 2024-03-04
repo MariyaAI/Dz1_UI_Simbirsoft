@@ -3,3 +3,5 @@ pytest
 allure-pytest
 Faker
 pytest-xdist
+pydantic
+requests
